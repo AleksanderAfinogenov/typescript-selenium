@@ -37,8 +37,8 @@ describe('BAD - Authorization', function () {
     (await  driver.findElement(By.css('[ng-model="ctrl.unit.hour"] option[value="14"]'))).click();
     (await  driver.findElement(By.css('[ng-model="ctrl.unit.minute"] option[value="30"]'))).click();
     // Ввели дату и время
-    driver.findElement(By.css('[ng-model="ctrl.unit.fam"]')).sendKeys('Рыжий'); // Фамилия 
-    driver.findElement(By.css('[ng-model="ctrl.unit.name"]')).sendKeys('Кот'); // Имя
+    driver.findElement(By.css('[id="input_21"]')).sendKeys('Рыжий'); // Фамилия 
+    driver.findElement(By.css('[id="input_22"]')).sendKeys('Кот'); // Имя
     driver.findElement(By.css('[placeholder="31"]')).sendKeys('3'); // день
     driver.findElement(By.css('[placeholder="01"]')).sendKeys('4'); // месяц
     driver.findElement(By.css('[placeholder="1901"]')).sendKeys('1994'); // год
@@ -46,9 +46,8 @@ describe('BAD - Authorization', function () {
     (await driver.findElement(By.css('[ng-click="ctrl.save()"]'))).click(); //Сохранили
     (await driver.findElement(By.css('[ng-click="exit()"]'))).click(); // Выход из учётки
     await driver.sleep(3000);
-    
-    driver.findElement(By.css('[ng-model="ctrl.email"]')).sendKeys('w@w.w');
-    driver.findElement(By.css('[ctrl.password"]')).sendKeys('w');
+    driver.findElement(By.css('[id="input_89"]')).sendKeys('w@w.w');
+    driver.findElement(By.css('[id="input_90"]')).sendKeys('w');
     (await driver.findElement(By.css('[type="button"]'))).click();
     // Снова вошли  систему 
     // Видим свою запись
