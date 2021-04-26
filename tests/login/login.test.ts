@@ -1,5 +1,9 @@
 import { Builder, WebDriver, Capabilities, By } from 'selenium-webdriver';
 
+interface IAssert {
+  equal: (actual: Object, expected: Object) => void;
+}
+
 require('chromedriver');
 const assert: IAssert = require('assert');
 
