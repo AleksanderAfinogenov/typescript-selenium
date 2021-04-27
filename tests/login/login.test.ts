@@ -27,6 +27,7 @@ describe('BAD - Authorization', function () {
 
   it('Login with incorrect data', async function () {
     await driver.get('http://lab2.webtm.ru');
+    await driver.sleep(3000);
     driver.findElement(By.css('[ng-model="ctrl.email"]')).sendKeys('w@w.w');
     driver.findElement(By.css('[ng-model="ctrl.password"]')).sendKeys('w');
     (await driver.findElement(By.css('[type="button"]'))).click();
@@ -46,13 +47,18 @@ describe('BAD - Authorization', function () {
     (await driver.findElement(By.css('[ng-click="ctrl.save()"]'))).click(); //Сохранили
     (await driver.findElement(By.css('[ng-click="exit()"]'))).click(); // Выход из учётки
     await driver.sleep(3000);
+<<<<<<< Updated upstream
     driver.findElement(By.css('[id="input_89"]')).sendKeys('w@w.w');
     driver.findElement(By.css('[id="input_90"]')).sendKeys('w');
+=======
+    driver.findElement(By.css('[ng-model="ctrl.email"]')).sendKeys('w@w.w');
+    driver.findElement(By.css('[ng-model="ctrl.password"]')).sendKeys('w');
+>>>>>>> Stashed changes
     (await driver.findElement(By.css('[type="button"]'))).click();
+    await driver.sleep(3000);
     // Снова вошли  систему 
     // Видим свою запись
-
-
+    
     let authorizationPasswordInput = driver.findElement(By.css('[Рыжий Кот]'));
     let exitAuthorizationPasswordInput = authorizationPasswordInput.then(() => true, () => false);
     await assert.equal(await exitAuthorizationPasswordInput, false);

@@ -56,9 +56,15 @@ describe('BAD - Authorization', function () {
     // Видим свою запись
 ​
 ​
+<<<<<<< Updated upstream
     let authorizationPasswordInput = driver.findElement(By.xpath(`//div[contains(@class, 'pointer')][./div[contains(text(), '14:30')]][./div[contains(text(), 'Рыжий Кот / 1994.4.3 /')]]`));
     let exitAuthorizationPasswordInput = authorizationPasswordInput.then(() => true, () => false);
     await assert.equal(await exitAuthorizationPasswordInput, true);
+=======
+    let authorizationPasswordInput = driver.findElement(By.xpath(`//div[contains(@class, 'pointer')][./div[contains(text(), '14:30')]][./div[contains(text(), 'Кот Кот / 1994.4.3 /')]]`));
+    let exitAuthorizationPasswordInput = authorizationPasswordInput.then(() => true, () => false);
+    await assert.equal(await exitAuthorizationPasswordInput, falce);
+>>>>>>> Stashed changes
    });
 
   xit('Login with correct data', async function () {
@@ -69,7 +75,11 @@ describe('BAD - Authorization', function () {
     await driver.sleep(1000);
     let authorizationPasswordInput = driver.findElement(By.css('[ng-model="ctrl.password"]'));
     let exitAuthorizationPasswordInput = authorizationPasswordInput.then(() => true, () => false);
+<<<<<<< Updated upstream
     await assert.equal(await exitAuthorizationPasswordInput, true);
+=======
+    await assert.equal(await exitAuthorizationPasswordInput, t);
+>>>>>>> Stashed changes
   });
 
   after(() => driver && driver.quit());
